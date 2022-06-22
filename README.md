@@ -9,8 +9,9 @@ Instructions to get started:
 3) Install the APK on the desired android device.
 4) Plug in the usb type c to ethernet adapter and set the static IP to 192.168.0.100 (Very important).
 5) Turn on airplane mode (Also important).
-6) Wait for about 5 seconds after connecting to monitor.
-7) Open app and enjoy.
+6) Connect ethernet cable to monitor.
+7) Wait for about 5 seconds after connecting to monitor.
+8) Open app and enjoy.
 
 Feel free to reach out if there are any suggestions or bugs that come up.
 
