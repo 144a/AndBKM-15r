@@ -1,23 +1,10 @@
-'''
-Canvas stress
-=============
-
-This example tests the performance of our Graphics engine by drawing large
-numbers of small squares. You should see a black canvas with buttons and a
-label at the bottom. Pressing the buttons adds small colored squares to the
-canvas.
-
-'''
 import socket
-import time
 
 from kivy.uix.button import Button
 from kivy.uix.widget import Widget
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
 from kivy.app import App
-from kivy.graphics import Color, Rectangle
-from random import random as r
 from functools import partial
 
 HOST = "192.168.0.1"
@@ -164,7 +151,7 @@ class StressCanvasApp(App):
     def build(self):
         wid = Widget()
 
-        label = Label(text='0')
+        label = Label(text='Waiting for input...')
 
         # Row 1
         btn_power = Button(text='Power',
@@ -221,9 +208,9 @@ class StressCanvasApp(App):
         layout2.add_widget(btn_9)
 
         # Row 3
-        btn_nument = Button(text='NumberPad Enter (Ent)',
+        btn_nument = Button(text='NumberPad Enter',
                             on_press=partial(self.getCommand, label, wid, "Ent"))
-        btn_numdel = Button(text='NumberPad Delete (Delete)',
+        btn_numdel = Button(text='NumberPad Delete',
                             on_press=partial(self.getCommand, label, wid, "Del"))
         layout3 = BoxLayout(size_hint=(1, .2), height=50)
         layout3.add_widget(btn_nument)
@@ -232,15 +219,15 @@ class StressCanvasApp(App):
         # Row 4
         btn_169 = Button(text='16:9',
                             on_press=partial(self.getCommand, label, wid, "Aspect"))
-        btn_extsync = Button(text='Ext Sync',
+        btn_extsync = Button(text='ExtSync',
                             on_press=partial(self.getCommand, label, wid, "ExtSync"))
-        btn_blueonly = Button(text='Blue Only',
+        btn_blueonly = Button(text='B Only',
                             on_press=partial(self.getCommand, label, wid, "BlueOnly"))
-        btn_redcut = Button(text='Red Off',
+        btn_redcut = Button(text='R Off',
                             on_press=partial(self.getCommand, label, wid, "RedCut"))
-        btn_bluecut = Button(text='Blue Off',
+        btn_bluecut = Button(text='B Off',
                             on_press=partial(self.getCommand, label, wid, "BlueCut"))
-        btn_greencut = Button(text='Green Off',
+        btn_greencut = Button(text='G Off',
                             on_press=partial(self.getCommand, label, wid, "GreenCut"))
         layout4 = BoxLayout(size_hint=(1, .2), height=50)
         layout4.add_widget(btn_169)
@@ -251,7 +238,7 @@ class StressCanvasApp(App):
         layout4.add_widget(btn_greencut)
 
         # Row 5
-        btn_scanmode = Button(text='Scan Mode',
+        btn_scanmode = Button(text='Scan',
                             on_press=partial(self.getCommand, label, wid, "ScanMode"))
         btn_hdelay = Button(text='H. Delay',
                             on_press=partial(self.getCommand, label, wid, "HorizDelay"))
@@ -261,7 +248,7 @@ class StressCanvasApp(App):
                             on_press=partial(self.getCommand, label, wid, "Mono"))
         btn_comb = Button(text='Comb',
                             on_press=partial(self.getCommand, label, wid, "Comb"))
-        btn_colortemp = Button(text='Color Temp.',
+        btn_colortemp = Button(text='Col. Temp',
                             on_press=partial(self.getCommand, label, wid, "ColorTemp"))
 
         layout5 = BoxLayout(size_hint=(1, .2), height=50)
@@ -272,16 +259,34 @@ class StressCanvasApp(App):
         layout5.add_widget(btn_comb)
         layout5.add_widget(btn_colortemp)
 
+        # Row 6
+        layout6 = BoxLayout(size_hint=(1, .2), height=50)
+        layout6.add_widget(label)
+
+        # Row 7
+        layout7 = BoxLayout(size_hint=(1, .2), height=50)
+        label1 = Label(text='AndEmu15-r: Simple BKM-15r Emulator')
+        layout7.add_widget(label1)
+
+        # Row 8
+        layout8 = BoxLayout(size_hint=(1, .2), height=50)
+        label2 = Label(text='Written by Andy Gatza (AKA 144a)')
+        layout8.add_widget(label2)
+
+
         #layout2.add_widget(label)
 
         root = BoxLayout(orientation='vertical')
         root.add_widget(wid)
 
+        root.add_widget(layout7)
+        root.add_widget(layout8)
         root.add_widget(layout5)
         root.add_widget(layout4)
         root.add_widget(layout2)
         root.add_widget(layout3)
         root.add_widget(layout1)
+        root.add_widget(layout6)
 
         return root
 
