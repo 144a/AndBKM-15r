@@ -1,7 +1,7 @@
 # AndBKM-15r
 A Simple Android App to emulate the Sony BKM-15r controller for A series BVMs
 
-AndBKM-15r is very primitive in this stage, and as such there are a number of graphical and logic issues that it still currently has. The goal is not to make something extremely feature heavy, but rather to allow for the utility of the BKM 15-r without having to own one.
+AndBKM-15r is very primitive in this stage, and as such there are a number of graphical and logic issues that it still currently has. The goal is not to make something extremely feature heavy, but rather to allow for the utility of the BKM-15r without having to own one.
 
 Instructions to get started:
 1) Go out and buy a usb type c to ethernet adapter. 
